@@ -1,0 +1,251 @@
+run_id,job_name,step_name,step_duration
+27016451868,lint,Set up job,1.0
+27016451868,lint,Checkout,1.0
+27016451868,lint,Configurar Python,0.0
+27016451868,lint,Instalar dependências,4.0
+27016451868,lint,Rodar flake8,1.0
+27016451868,lint,Post Configurar Python,0.0
+27016451868,lint,Post Checkout,0.0
+27016451868,lint,Complete job,0.0
+27016451868,test_par,Set up job,1.0
+27016451868,test_par,Checkout,1.0
+27016451868,test_par,Configurar Python,0.0
+27016451868,test_par,Cache do pip (condicional),0.0
+27016451868,test_par,Instalar dependências,4.0
+27016451868,test_par,Rodar pytest (paralelo),5.0
+27016451868,test_par,Publicar artefato de resultados,1.0
+27016451868,test_par,Post Configurar Python,0.0
+27016451868,test_par,Post Checkout,0.0
+27016451868,test_par,Complete job,0.0
+27016451868,build,Set up job,1.0
+27016451868,build,Baixar artefato de testes,0.0
+27016451868,build,Republicar como relatório final,1.0
+27016451868,build,Complete job,1.0
+27016387209,lint,Set up job,1.0
+27016387209,lint,Checkout,1.0
+27016387209,lint,Configurar Python,0.0
+27016387209,lint,Instalar dependências,6.0
+27016387209,lint,Rodar flake8,0.0
+27016387209,lint,Post Configurar Python,1.0
+27016387209,lint,Post Checkout,0.0
+27016387209,lint,Complete job,0.0
+27016387209,test_seq,Set up job,1.0
+27016387209,test_seq,Checkout,1.0
+27016387209,test_seq,Configurar Python,0.0
+27016387209,test_seq,Cache do pip (condicional),1.0
+27016387209,test_seq,Instalar dependências,5.0
+27016387209,test_seq,Rodar pytest (sequencial),0.0
+27016387209,test_seq,Publicar artefato de resultados,1.0
+27016387209,test_seq,Post Cache do pip (condicional),0.0
+27016387209,test_seq,Post Configurar Python,0.0
+27016387209,test_seq,Post Checkout,0.0
+27016387209,test_seq,Complete job,0.0
+27016387209,build,Set up job,2.0
+27016387209,build,Baixar artefato de testes,0.0
+27016387209,build,Republicar como relatório final,1.0
+27016387209,build,Complete job,1.0
+27016318048,lint,Set up job,1.0
+27016318048,lint,Checkout,1.0
+27016318048,lint,Configurar Python,0.0
+27016318048,lint,Instalar dependências,4.0
+27016318048,lint,Rodar flake8,0.0
+27016318048,lint,Post Configurar Python,1.0
+27016318048,lint,Post Checkout,0.0
+27016318048,lint,Complete job,0.0
+27016318048,test_par,Set up job,1.0
+27016318048,test_par,Checkout,1.0
+27016318048,test_par,Configurar Python,0.0
+27016318048,test_par,Cache do pip (condicional),1.0
+27016318048,test_par,Instalar dependências,6.0
+27016318048,test_par,Rodar pytest (paralelo),0.0
+27016318048,test_par,Publicar artefato de resultados,1.0
+27016318048,test_par,Post Cache do pip (condicional),0.0
+27016318048,test_par,Post Configurar Python,0.0
+27016318048,test_par,Post Checkout,0.0
+27016318048,test_par,Complete job,0.0
+27016318048,build,Set up job,1.0
+27016318048,build,Baixar artefato de testes,1.0
+27016318048,build,Republicar como relatório final,1.0
+27016318048,build,Complete job,0.0
+27016258597,test_par,Set up job,1.0
+27016258597,test_par,Checkout,1.0
+27016258597,test_par,Configurar Python,0.0
+27016258597,test_par,Cache do pip (condicional),1.0
+27016258597,test_par,Instalar dependências,3.0
+27016258597,test_par,Rodar pytest (paralelo),5.0
+27016258597,test_par,Publicar artefato de resultados,0.0
+27016258597,test_par,Post Cache do pip (condicional),1.0
+27016258597,test_par,Post Configurar Python,0.0
+27016258597,test_par,Post Checkout,0.0
+27016258597,test_par,Complete job,0.0
+27016258597,lint,Set up job,1.0
+27016258597,lint,Checkout,1.0
+27016258597,lint,Configurar Python,0.0
+27016258597,lint,Instalar dependências,3.0
+27016258597,lint,Rodar flake8,0.0
+27016258597,lint,Post Configurar Python,1.0
+27016258597,lint,Post Checkout,0.0
+27016258597,lint,Complete job,0.0
+27016258597,build,Set up job,1.0
+27016258597,build,Baixar artefato de testes,0.0
+27016258597,build,Republicar como relatório final,1.0
+27016258597,build,Complete job,0.0
+27016196210,lint,Set up job,1.0
+27016196210,lint,Checkout,1.0
+27016196210,lint,Configurar Python,0.0
+27016196210,lint,Instalar dependências,5.0
+27016196210,lint,Rodar flake8,1.0
+27016196210,lint,Post Configurar Python,0.0
+27016196210,lint,Post Checkout,0.0
+27016196210,lint,Complete job,0.0
+27016196210,test_seq,Set up job,1.0
+27016196210,test_seq,Checkout,1.0
+27016196210,test_seq,Configurar Python,0.0
+27016196210,test_seq,Cache do pip (condicional),1.0
+27016196210,test_seq,Instalar dependências,2.0
+27016196210,test_seq,Rodar pytest (sequencial),1.0
+27016196210,test_seq,Publicar artefato de resultados,0.0
+27016196210,test_seq,Post Cache do pip (condicional),1.0
+27016196210,test_seq,Post Configurar Python,0.0
+27016196210,test_seq,Post Checkout,0.0
+27016196210,test_seq,Complete job,0.0
+27016196210,build,Set up job,1.0
+27016196210,build,Baixar artefato de testes,0.0
+27016196210,build,Republicar como relatório final,1.0
+27016196210,build,Complete job,0.0
+27016089433,test_par,Set up job,1.0
+27016089433,test_par,Checkout,1.0
+27016089433,test_par,Configurar Python,0.0
+27016089433,test_par,Cache do pip (condicional),1.0
+27016089433,test_par,Instalar dependências,2.0
+27016089433,test_par,Rodar pytest (paralelo),1.0
+27016089433,test_par,Publicar artefato de resultados,1.0
+27016089433,test_par,Post Cache do pip (condicional),0.0
+27016089433,test_par,Post Configurar Python,0.0
+27016089433,test_par,Post Checkout,0.0
+27016089433,test_par,Complete job,0.0
+27016089433,lint,Set up job,1.0
+27016089433,lint,Checkout,1.0
+27016089433,lint,Configurar Python,0.0
+27016089433,lint,Instalar dependências,7.0
+27016089433,lint,Rodar flake8,0.0
+27016089433,lint,Post Configurar Python,1.0
+27016089433,lint,Post Checkout,0.0
+27016089433,lint,Complete job,0.0
+27016089433,build,Set up job,1.0
+27016089433,build,Baixar artefato de testes,0.0
+27016089433,build,Republicar como relatório final,1.0
+27016089433,build,Complete job,0.0
+27016037040,test_par,Set up job,1.0
+27016037040,test_par,Checkout,1.0
+27016037040,test_par,Configurar Python,0.0
+27016037040,test_par,Cache do pip (condicional),2.0
+27016037040,test_par,Instalar dependências,3.0
+27016037040,test_par,Rodar pytest (paralelo),0.0
+27016037040,test_par,Publicar artefato de resultados,1.0
+27016037040,test_par,Post Cache do pip (condicional),1.0
+27016037040,test_par,Post Configurar Python,0.0
+27016037040,test_par,Post Checkout,0.0
+27016037040,test_par,Complete job,0.0
+27016037040,lint,Set up job,1.0
+27016037040,lint,Checkout,1.0
+27016037040,lint,Configurar Python,0.0
+27016037040,lint,Instalar dependências,3.0
+27016037040,lint,Rodar flake8,1.0
+27016037040,lint,Post Configurar Python,0.0
+27016037040,lint,Post Checkout,0.0
+27016037040,lint,Complete job,0.0
+27016037040,build,Set up job,1.0
+27016037040,build,Baixar artefato de testes,1.0
+27016037040,build,Republicar como relatório final,0.0
+27016037040,build,Complete job,0.0
+27015968537,lint,Set up job,1.0
+27015968537,lint,Checkout,0.0
+27015968537,lint,Configurar Python,0.0
+27015968537,lint,Instalar dependências,4.0
+27015968537,lint,Rodar flake8,0.0
+27015968537,lint,Post Configurar Python,0.0
+27015968537,lint,Post Checkout,0.0
+27015968537,lint,Complete job,0.0
+27015968537,test_seq,Set up job,1.0
+27015968537,test_seq,Checkout,1.0
+27015968537,test_seq,Configurar Python,0.0
+27015968537,test_seq,Cache do pip (condicional),0.0
+27015968537,test_seq,Instalar dependências,3.0
+27015968537,test_seq,Rodar pytest (sequencial),1.0
+27015968537,test_seq,Publicar artefato de resultados,0.0
+27015968537,test_seq,Post Configurar Python,0.0
+27015968537,test_seq,Post Checkout,1.0
+27015968537,test_seq,Complete job,0.0
+27015968537,build,Set up job,1.0
+27015968537,build,Baixar artefato de testes,1.0
+27015968537,build,Republicar como relatório final,1.0
+27015968537,build,Complete job,0.0
+27015866085,lint,Set up job,0.0
+27015866085,lint,Checkout,1.0
+27015866085,lint,Configurar Python,0.0
+27015866085,lint,Instalar dependências,4.0
+27015866085,lint,Rodar flake8,0.0
+27015866085,lint,Post Configurar Python,0.0
+27015866085,lint,Post Checkout,1.0
+27015866085,lint,Complete job,0.0
+27015866085,test_par,Set up job,1.0
+27015866085,test_par,Checkout,1.0
+27015866085,test_par,Configurar Python,0.0
+27015866085,test_par,Cache do pip (condicional),0.0
+27015866085,test_par,Instalar dependências,5.0
+27015866085,test_par,Rodar pytest (paralelo),1.0
+27015866085,test_par,Publicar artefato de resultados,1.0
+27015866085,test_par,Post Configurar Python,0.0
+27015866085,test_par,Post Checkout,0.0
+27015866085,test_par,Complete job,0.0
+27015866085,build,Set up job,1.0
+27015866085,build,Baixar artefato de testes,1.0
+27015866085,build,Republicar como relatório final,1.0
+27015866085,build,Complete job,0.0
+27015764881,lint,Set up job,1.0
+27015764881,lint,Checkout,1.0
+27015764881,lint,Configurar Python,0.0
+27015764881,lint,Instalar dependências,4.0
+27015764881,lint,Rodar flake8,1.0
+27015764881,lint,Post Configurar Python,0.0
+27015764881,lint,Post Checkout,0.0
+27015764881,lint,Complete job,0.0
+27015764881,test_seq,Set up job,1.0
+27015764881,test_seq,Checkout,1.0
+27015764881,test_seq,Configurar Python,0.0
+27015764881,test_seq,Cache do pip (condicional),2.0
+27015764881,test_seq,Instalar dependências,3.0
+27015764881,test_seq,Rodar pytest (sequencial),0.0
+27015764881,test_seq,Publicar artefato de resultados,1.0
+27015764881,test_seq,Post Cache do pip (condicional),1.0
+27015764881,test_seq,Post Configurar Python,0.0
+27015764881,test_seq,Post Checkout,0.0
+27015764881,test_seq,Complete job,0.0
+27015764881,build,Set up job,1.0
+27015764881,build,Baixar artefato de testes,1.0
+27015764881,build,Republicar como relatório final,1.0
+27015764881,build,Complete job,0.0
+27015628354,lint,Set up job,0.0
+27015628354,lint,Checkout,1.0
+27015628354,lint,Configurar Python,0.0
+27015628354,lint,Instalar dependências,3.0
+27015628354,lint,Rodar flake8,1.0
+27015628354,lint,Post Configurar Python,0.0
+27015628354,lint,Post Checkout,0.0
+27015628354,lint,Complete job,0.0
+27015628354,test_par,Set up job,1.0
+27015628354,test_par,Checkout,0.0
+27015628354,test_par,Configurar Python,0.0
+27015628354,test_par,Cache do pip (condicional),1.0
+27015628354,test_par,Instalar dependências,2.0
+27015628354,test_par,Rodar pytest (paralelo),1.0
+27015628354,test_par,Publicar artefato de resultados,0.0
+27015628354,test_par,Post Cache do pip (condicional),1.0
+27015628354,test_par,Post Configurar Python,0.0
+27015628354,test_par,Post Checkout,0.0
+27015628354,test_par,Complete job,0.0
+27015628354,build,Set up job,1.0
+27015628354,build,Baixar artefato de testes,1.0
+27015628354,build,Republicar como relatório final,1.0
+27015628354,build,Complete job,0.0
