@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 """Coleta métricas reais das execuções do GitHub Actions via API REST.
 
-Roda LOCALMENTE na máquina do usuário (o gh CLI desta máquina está quebrado).
-Usa um Personal Access Token (PAT) com escopo `repo` / `actions:read`.
 
 Variáveis de ambiente:
 - GITHUB_TOKEN       (obrigatória) PAT para autenticar na API.
-- GITHUB_REPOSITORY  (opcional)    default "daviversan/ponderada_actions_versan".
-- WORKFLOW_FILE      (opcional)    default "ci.yml".
-- MAX_RUNS           (opcional)    default 50.
+- GITHUB_REPOSITORY  (opcional)    
+- WORKFLOW_FILE      (opcional)    
+- MAX_RUNS           (opcional)    
 
 Saídas (pasta data/):
 - metrics.csv  -> uma linha por job, schema exigido pelo enunciado.
