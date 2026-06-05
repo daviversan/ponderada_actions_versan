@@ -1,0 +1,165 @@
+name: CI
+
+# Disparo APENAS manual (workflow_dispatch). Cada clique em "Run workflow"
+# corresponde a uma execução da matriz documentada no README.
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Modo de execução dos testes"
+        type: choice
+        options:
+          - parallel
+          - sequential
+        default: parallel
+      use_cache:
+        description: "Habilitar cache do pip"
+        type: boolean
+        default: true
+      force_fail:
+        description: "Forçar uma falha proposital nos testes"
+        type: boolean
+        default: false
+      slow_test:
+        description: "Habilitar teste lento (~5s)"
+        type: boolean
+        default: false
+      test_multiplier:
+        description: "Multiplicador de testes parametrizados"
+        type: string
+        default: "1"
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # 1) Lint — sempre roda primeiro
+  # ---------------------------------------------------------------------------
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Rodar flake8
+        run: flake8 app tests
+
+  # ---------------------------------------------------------------------------
+  # 2a) Testes SEQUENCIAIS (gated por mode=='sequential', depende do lint)
+  # ---------------------------------------------------------------------------
+  test_seq:
+    needs: lint
+    if: ${{ inputs.mode == 'sequential' }}
+    runs-on: ubuntu-latest
+    env:
+      FORCE_FAIL: ${{ inputs.force_fail == true && '1' || '0' }}
+      SLOW_TEST: ${{ inputs.slow_test == true && '1' || '0' }}
+      TEST_MULTIPLIER: ${{ inputs.test_multiplier }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache do pip (condicional)
+        if: ${{ inputs.use_cache == true }}
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ runner.os }}-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            pip-${{ runner.os }}-
+
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Rodar pytest (sequencial)
+        run: pytest --json-report --json-report-file=report.json
+
+      - name: Publicar artefato de resultados
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: report.json
+          if-no-files-found: warn
+
+  # ---------------------------------------------------------------------------
+  # 2b) Testes PARALELOS (gated por mode=='parallel', SEM needs -> roda junto)
+  # ---------------------------------------------------------------------------
+  test_par:
+    if: ${{ inputs.mode == 'parallel' }}
+    runs-on: ubuntu-latest
+    env:
+      FORCE_FAIL: ${{ inputs.force_fail == true && '1' || '0' }}
+      SLOW_TEST: ${{ inputs.slow_test == true && '1' || '0' }}
+      TEST_MULTIPLIER: ${{ inputs.test_multiplier }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache do pip (condicional)
+        if: ${{ inputs.use_cache == true }}
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ runner.os }}-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            pip-${{ runner.os }}-
+
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Rodar pytest (paralelo)
+        run: pytest --json-report --json-report-file=report.json
+
+      - name: Publicar artefato de resultados
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: report.json
+          if-no-files-found: warn
+
+  # ---------------------------------------------------------------------------
+  # 3) Build — baixa o artefato existente e o republica como "relatorio-final"
+  # ---------------------------------------------------------------------------
+  build:
+    needs: [lint, test_seq, test_par]
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar artefato de testes
+        uses: actions/download-artifact@v4
+        with:
+          name: test-results
+          path: resultado
+        continue-on-error: true
+
+      - name: Republicar como relatório final
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-final
+          path: resultado
+          if-no-files-found: warn
