@@ -1,0 +1,5 @@
+# Dependências usadas LOCALMENTE para coletar métricas e gerar gráficos
+-r requirements.txt
+requests==2.32.3
+pandas==2.2.2
+matplotlib==3.9.0

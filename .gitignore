@@ -1,0 +1,23 @@
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+
+# Saída local do pytest-json-report (gerado no CI/local, não versionado)
+report.json
+
+# Artefatos baixados temporariamente da API do GitHub
+test-results.zip
+*.tmp
+
+# Sistema operacional / IDE
+.DS_Store
+.idea/
+.vscode/
